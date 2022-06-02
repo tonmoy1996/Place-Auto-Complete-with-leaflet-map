@@ -5,17 +5,14 @@ const initialState = {
 };
 
 export const LocationSlice = createSlice({
-    name: "locationSlice",
-    initialState,
-    reducers: {
+    name: "locationSlice", initialState, reducers: {
         addLocationDetails: (state, action) => {
-            state.address = action.payload
+            state.data = action.payload
         }
     }
 });
 
-export const {addLocationDetails} = LocationSlice.actions;
+export const {addLocationDetails, initialMapInstance} = LocationSlice.actions;
 
-export const selectAddress = state => state.location.address;
-
+export const selectAddress = state => state.location.data;
 export default LocationSlice.reducer;
