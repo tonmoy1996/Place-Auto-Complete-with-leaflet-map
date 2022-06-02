@@ -1,38 +1,48 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.react-mapbox-ac-menu {
+  width: auto;
+  position: absolute;
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.MuiPaper-root {
+  display: inline-grid;
+  grid-template-columns: 50px auto;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  padding-left: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+div .react-mapbox-ac-input {
+  width: 95%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-mapbox-ac-input {
+  border: none transparent;
+  outline: none;
+  background: rgba(245, 245, 245, 0.5);
+  margin: 20px 5px 5px 5px;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.react-mapbox-ac-suggestion {
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.react-mapbox-ac-suggestion:hover {
+  background-color: #ccc;
 }
