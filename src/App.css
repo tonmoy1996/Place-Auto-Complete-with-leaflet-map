@@ -50,3 +50,42 @@ div .react-mapbox-ac-input {
 .form-control {
     padding: 15px;
 }
+
+
+.left-slider {
+    position: fixed;
+    z-index: 99999;
+    right: 0;
+    background-color: #9cace8;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.slider-width-50p {
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+}
+
+.slider-width-300p {
+    width: 350px;
+    height: 100vh;
+}
+
+.sidebar-container {
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.options {
+    border-radius: 8px;
+    box-shadow: -1px 5px 7px rgb(0 0 0 / 30%) !important;
+    background: #005da6;
+    padding: 5px;
+}
+
+.arrow-style {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

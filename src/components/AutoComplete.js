@@ -6,6 +6,7 @@ import {addLocationDetails, selectAddress} from "../slices/LocationSlice";
 
 import _Search from "./shared/_Search";
 import Index from "./map";
+import _RightSideBar from "./shared/_RightSideBar";
 
 const Autocomplete = () => {
     const data = useSelector(selectAddress);
@@ -46,6 +47,7 @@ const Autocomplete = () => {
             </Paper>
 
             {data ? <Index data={data}/> : ""}
+            <_RightSideBar />
 
         </Box>);
 }
