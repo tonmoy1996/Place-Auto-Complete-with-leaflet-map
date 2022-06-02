@@ -2,7 +2,6 @@ import React from 'react';
 import {MapContainer, TileLayer, Marker, useMap, Popup} from 'react-leaflet';
 import Leaflet from "leaflet";
 
-
 //icons
 import MapIcon from "../icons/map-marker.png";
 
@@ -20,29 +19,27 @@ function ChangeView({center, zoom}) {
     return null;
 }
 
-
 const Map = ({data}) => {
-    console.log("comes")
     const {address, lat, long} = data;
     return (<div>
-            <MapContainer center={[lat, long]} zoom={16}
-                          scrollWheelZoom={false} style={{width: "100%", height: "90vh", position: 'absolute'}}>
-                <ChangeView center={[lat, long]}/>
-                <TileLayer
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker
-                    position={[lat, long]}
-                    icon={markerIcon}>
-                    <Popup offset={[0, -30]}>
-                        <div>
-                            <h3>Address</h3>
-                            <h4>{address}</h4>
-                        </div>
-                    </Popup>
-                </Marker>
-            </MapContainer>
-        </div>);
+        <MapContainer center={[lat, long]} zoom={16}
+                      scrollWheelZoom={false} style={{width: "100%", height: "90vh", position: 'absolute'}}>
+            <ChangeView center={[lat, long]}/>
+            <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker
+                position={[lat, long]}
+                icon={markerIcon}>
+                <Popup offset={[0, -30]}>
+                    <div>
+                        <h3>Address</h3>
+                        <h4>{address}</h4>
+                    </div>
+                </Popup>
+            </Marker>
+        </MapContainer>
+    </div>);
 }
 export default Map;

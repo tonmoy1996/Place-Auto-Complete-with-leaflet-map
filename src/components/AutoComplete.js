@@ -5,6 +5,9 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import MapboxAutocomplete from "react-mapbox-autocomplete";
 import Map from "./Map";
 import {useState} from "react";
+import {useSelector, useDispatch} from 'react-redux';
+import {addLocationDetails, selectAddress} from "../slices/LocationFetcherSlice";
+
 
 const mapAccess = {
     mapboxApiAccessToken: process.env.REACT_APP_MAPBOX_TOKEN
@@ -12,18 +15,26 @@ const mapAccess = {
 
 
 const Autocomplete = () => {
-    const [data, setData] = useState(null);
+    const data = useSelector(selectAddress);
+    const dispatch = useDispatch();
 
     function _suggestionSelect(address, lat, long, text) {
-        setData({
-            address: address, lat: lat, long: long
-        });
+        const location = {
+            address: address,
+            lat: lat,
+            long: long
+        }
+        dispatch(addLocationDetails(location));
     }
 
     return (
         <Box
             sx={{
-                bgcolor: 'background.paper', overflow: 'hidden', borderRadius: '12px', boxShadow: 1, fontWeight: 'bold',
+                bgcolor: 'background.primary',
+                overflow: 'hidden',
+                borderRadius: '12px',
+                boxShadow: 1,
+                fontWeight: 'bold',
             }}
         >
             <Paper
@@ -46,7 +57,7 @@ const Autocomplete = () => {
                 />
             </Paper>
 
-            {data ? <Map data={data}/> :""}
+            {data ? <Map data={data}/> : ""}
 
         </Box>);
 }
