@@ -1,7 +1,7 @@
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import InboxIcon from "@mui/icons-material/Inbox";
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import ListItemText from "@mui/material/ListItemText";
 
 export default function _ListItem({address}){
@@ -9,7 +9,7 @@ export default function _ListItem({address}){
         <ListItem disablePadding>
             <ListItemButton>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <AddLocationAltIcon color="primary" />
                 </ListItemIcon>
                 <ListItemText primary={address} />
             </ListItemButton>

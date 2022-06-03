@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleDoubleLeft, faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import SearchHistory from "../SearchHistory";
-
+import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
+import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
+import NavigationIcon from "./NavigationIcon";
 
 const _RightSideBar = () => {
     const [show, setShow] = useState(false);
@@ -11,10 +11,12 @@ const _RightSideBar = () => {
             <div className={`left-slider br-8 m-1 ${!show ? "slider-width-50p" : "slider-width-300p"}`}>
                 <div className="sidebar-container">
                     <div className="row">
-                        <div className="col-md-12 arrow-style">
-                            <FontAwesomeIcon icon={!show ? faAngleDoubleLeft : faAngleDoubleRight}
-                                             onClick={() => setShow(!show)}
-                                             className="f-18 text-white cursor-pointer m-2"/>
+                        <div className="col-md-12">
+                            {
+                                !show ? <NavigationIcon Icon={FormatAlignRightIcon} onclick={() => setShow(!show)}/>
+                                    :
+                                    <NavigationIcon Icon={FormatAlignLeftIcon} onclick={() => setShow(!show)}/>
+                            }
                         </div>
                     </div>
                     <div>
